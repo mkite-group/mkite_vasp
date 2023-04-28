@@ -6,7 +6,7 @@ As an example, this plugin implements recipes such as relaxation and single-poin
 
 ## Documentation
 
-General tutorial for `mkite` and its plugins are available in the [main documentation](https://www.mkite.org).
+General tutorial for `mkite` and its plugins are available in the [main documentation](https://mkite.org).
 Complete API documentation is pending.
 
 ## Installation
