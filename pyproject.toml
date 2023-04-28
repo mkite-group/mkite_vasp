@@ -6,6 +6,12 @@ description = "mkite_vasp is a plugin to execute VASP calculations using mkite"
 authors = [{name = "Daniel Schwalbe-Koda", email = "dskoda@llnl.gov"}]
 readme = "README.md"
 requires-python = ">=3.8"
+keywords = ["workflow", "materials-science"]
+dependencies = [
+    "pymatgen",
+    "custodian",
+    "pydantic",
+]
 
 [project.entry-points."mkite.recipes"]
 "vasp.pbe.relax" = "mkite_vasp.recipes.pbe:RelaxPBEVaspChain"

@@ -1,8 +1,3 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-setup(
-    name='mkite_vasp',
-    version='0.1.0',
-    packages=find_packages(include=['mkite_vasp']),
-)
-
+setup()
