@@ -1,0 +1,79 @@
+{
+    "job": {
+        "id": 0,
+        "project": "test",
+        "experiment": "rpbe_molecule"
+    },
+    "recipe": {
+        "id": 0,
+        "name": "vasp.rpbe.relax",
+        "package": "VASP",
+        "method": "DFT"
+    },
+    "options": {
+        "INCAR": {
+            "ISIF": 2
+        }
+    },
+    "inputs": [
+        {
+            "species": [
+                "O",
+                "C",
+                "H",
+                "H",
+                "H",
+                "H"
+            ],
+            "coords": [
+                [
+                    -0.37015373178901406,
+                    0.02705110575295089,
+                    0.007666181136088954
+                ],
+                [
+                    0.9171805183600434,
+                    -0.22685244540921543,
+                    0.5392733079297
+                ],
+                [
+                    -0.42633645497587014,
+                    1.0634983792026407,
+                    -0.33400879241354453
+                ],
+                [
+                    -0.5619924153885308,
+                    -0.6534474178065114,
+                    -0.8255449881836593
+                ],
+                [
+                    -1.1160171429595482,
+                    -0.13764762861917845,
+                    0.7888083506185619
+                ],
+                [
+                    1.5573192267529345,
+                    -0.07260199312069049,
+                    -0.1761940590871501
+                ]
+            ],
+            "formula": {
+                "name": "H4 C1 O1 +0",
+                "charge": 0
+            },
+            "mol": {
+                "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+                "smiles": "CO",
+                "formula": null,
+                "siteprops": {},
+                "attributes": {},
+                "@module": "mkite.orm.mols.models",
+                "@class": "Molecule"
+            },
+            "siteprops": {},
+            "attributes": {},
+            "@module": "mkite.orm.mols.models",
+            "@class": "Conformer"
+        }
+    ]
+}
