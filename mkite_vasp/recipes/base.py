@@ -1,12 +1,19 @@
 import os
-from pymatgen.core import Structure, Molecule
-from pymatgen.io.vasp.sets import DictSet
 
-from mkite_core.recipes import BaseRecipe, RecipeChain, RecipeError
-from mkite_core.models import CrystalInfo, ConformerInfo
-from mkite_vasp.settings import VaspOptions, VaspSettings
+from mkite_core.models import ConformerInfo
+from mkite_core.models import CrystalInfo
+from mkite_core.recipes import BaseRecipe
+from mkite_core.recipes import RecipeChain
+from mkite_core.recipes import RecipeError
 from mkite_vasp.parsers import VaspParser
 from mkite_vasp.runners import CustodianRunner
+from mkite_vasp.settings import VaspOptions
+from mkite_vasp.settings import VaspSettings
+from pymatgen.core import Molecule
+from pymatgen.core import Structure
+from pymatgen.io.vasp.sets import DictSet
+
+from .errors import VaspErrorHandler
 
 
 class VaspRecipe(BaseRecipe):
@@ -17,6 +24,7 @@ class VaspRecipe(BaseRecipe):
     OPTIONS_CLS = VaspOptions
     PARSER_CLS = VaspParser
     RUNNER_CLS = CustodianRunner
+    ERROR_CLS = VaspErrorHandler
 
     def setup(self, workdir):
         vasp_input = DictSet(
