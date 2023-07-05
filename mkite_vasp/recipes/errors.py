@@ -14,10 +14,18 @@ class VaspErrorHandler(BaseErrorHandler):
     def handle_relax_errors(self, info: JobInfo):
         files = os.listdir(self.workdir)
         if "CONTCAR" in files:
-            structure = Structure.from_file("CONTCAR")
+            # we can restart the job by taking the relaxed
+            # structure and re-adding it to the engine
+            contcar = os.path.join(self.workdir, "CONTCAR")
+            structure = Structure.from_file(contcar)
             crystal = CrystalInfo.from_pymatgen(structure)
             info.inputs = [crystal.as_dict()]
 
-        self.set_status(info, Status.READY.value)
+            # to continue the job, set status as ready
+            self.set_status(info, "Y")
 
+        else:
+            self.set_status(info, "E")
+
+        info.workdir = self.workdir
         return info
