@@ -27,5 +27,5 @@ class VaspErrorHandler(BaseErrorHandler):
         else:
             self.set_status(info, "E")
 
-        info.workdir = self.workdir
+        info.workdir = None
         return info
