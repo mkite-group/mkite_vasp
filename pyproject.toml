@@ -15,7 +15,7 @@ dependencies = [
 
 [project.entry-points."mkite.recipes"]
 "vasp.pbe.relax" = "mkite_vasp.recipes.pbe:RelaxPBEVaspChain"
-"vasp.pbe.static" = "mkite_vasp.recipes.pbe:StaticPBEVaspRecipe"
+"vasp.pbe.static" = "mkite_vasp.recipes.pbe:StaticPBEVaspChain"
 "vasp.rpbe.relax" = "mkite_vasp.recipes.rpbe:RelaxRPBEVaspChain"
-"vasp.rpbe.static" = "mkite_vasp.recipes.rpbe:StaticRPBEVaspRecipe"
+"vasp.rpbe.static" = "mkite_vasp.recipes.rpbe:StaticRPBEVaspChain"
 "vasp.rpbe.dos" = "mkite_vasp.recipes.rpbe:DosRPBEVaspChain"
