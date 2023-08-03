@@ -1,2 +1,2 @@
-from .static import StaticPBEVaspRecipe
+from .static import StaticPBEVaspRecipe, StaticPBEVaspChain
 from .relax import RelaxPBEVaspChain

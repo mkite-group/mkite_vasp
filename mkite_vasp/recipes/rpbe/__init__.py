@@ -1,3 +1,3 @@
-from .static import StaticRPBEVaspRecipe
+from .static import StaticRPBEVaspRecipe, StaticRPBEVaspChain
 from .relax import RelaxRPBEVaspChain
 from .dos import DosRPBEVaspChain
