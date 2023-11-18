@@ -24,7 +24,5 @@ class RelaxPBEVaspRecipe(VaspRecipe):
 class RelaxPBEVaspChain(VaspChain):
     JOBS = [
         RelaxPBEVaspRecipe,
-        UpdateStructurePipe,
-        StaticPBEVaspRecipe,
         SaveResultsPipe,
     ]
