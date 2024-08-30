@@ -1,7 +1,6 @@
 import os
 from pymatgen.core import Structure
-from mkite_engines.status import Status
-from mkite_core.models import JobInfo, CrystalInfo
+from mkite_core.models import JobInfo, CrystalInfo, Status
 from mkite_core.recipes import BaseErrorHandler
 
 

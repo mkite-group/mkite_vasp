@@ -1,3 +1,4 @@
+from typing import Any
 from pydantic import Field
 from mkite_core.external import load_config
 from pkg_resources import resource_filename
@@ -20,7 +21,7 @@ class VaspOptions(BaseOptions):
 
 
 class VaspSettings(EnvSettings):
-    VASP_DEFAULT_OPTIONS: dict = Field(
+    VASP_DEFAULT_OPTIONS: Any = Field(
         default_factory=VaspOptions.get_defaults,
         description="File where to load the default calculation details\
             for VASP",
