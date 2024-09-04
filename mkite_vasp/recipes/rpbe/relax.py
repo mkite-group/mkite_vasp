@@ -7,7 +7,7 @@ from .static import StaticRPBEVaspRecipe
 
 
 class RelaxRPBEVaspOptions(VaspOptions):
-    INCAR = {
+    INCAR: dict = {
         "IBRION": 2,
         "ISIF": 3,
         "NSW": 99,

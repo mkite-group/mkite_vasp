@@ -7,7 +7,7 @@ from mkite_vasp.runners import CustodianRunner
 
 
 class StaticRPBEVaspOptions(VaspOptions):
-    INCAR = {
+    INCAR: dict = {
         "IBRION": -1,
         "NSW": 0,
         "GGA": "RP",
