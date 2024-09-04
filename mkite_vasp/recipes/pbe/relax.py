@@ -9,7 +9,7 @@ from .static import StaticPBEVaspRecipe
 
 
 class RelaxPBEVaspOptions(VaspOptions):
-    INCAR = {
+    INCAR: dict = {
         "IBRION": 2,
         "ISIF": 3,
         "NSW": 99,
