@@ -40,7 +40,7 @@ class VaspRecipe(BaseRecipe):
     def get_options(self) -> VaspOptions:
         """Builds an options dictionary for VASP"""
         options = self.settings.VASP_DEFAULT_OPTIONS
-        options = VaspOptions.dict_update(options, self.OPTIONS_CLS().dict())
+        options = VaspOptions.dict_update(options, self.OPTIONS_CLS().model_dump())
         options = VaspOptions.dict_update(options, self.info.options)
         return options
 

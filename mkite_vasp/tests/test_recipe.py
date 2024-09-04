@@ -5,7 +5,7 @@ from unittest.mock import Mock
 from pkg_resources import resource_filename
 
 from mkite_core.models import JobInfo
-from mkite_vasp.runners import CustodianRunner
+from mkite_core.recipes.runner import BaseRunner
 from mkite_vasp.recipes import VaspRecipe
 from mkite_core.tests.tempdirs import run_in_tempdir
 
@@ -13,7 +13,10 @@ from mkite_core.tests.tempdirs import run_in_tempdir
 INFO = JobInfo.from_json(resource_filename("mkite_core.tests.files", "jobinfo.json"))
 
 
-class MockRunner(VaspRunner):
+class MockRunner(BaseRunner):
+    def cmd(self):
+        return "echo vasp"
+
     def run(self):
         return self.cmd
 
