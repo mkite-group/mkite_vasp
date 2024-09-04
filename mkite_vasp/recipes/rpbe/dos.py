@@ -8,7 +8,7 @@ from .static import StaticRPBEVaspRecipe
 
 
 class DosRPBEVaspOptions(VaspOptions):
-    INCAR = {
+    INCAR: dict = {
         "IBRION": -1,
         "NSW": 0,
         "GGA": "RP",
@@ -21,7 +21,7 @@ class DosRPBEVaspOptions(VaspOptions):
         "ICHARG": 1,
     }
 
-    KPOINTS = {
+    KPOINTS: dict = {
         "reciprocal_density": 64 * 3
     }
 
