@@ -1,16 +1,16 @@
 [project]
 
 name = "mkite_vasp"
-version = "0.1.0"
+version = "24.09.05"
 description = "mkite_vasp is a plugin to execute VASP calculations using mkite"
-authors = [{name = "Daniel Schwalbe-Koda", email = "dskoda@llnl.gov"}]
+authors = [{name = "Daniel Schwalbe-Koda", email = "dskoda@ucla.edu"}]
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["workflow", "materials-science"]
 dependencies = [
     "pymatgen",
     "custodian",
-    "pydantic",
+    "pydantic>=2.0",
 ]
 
 [project.entry-points."mkite.recipes"]
