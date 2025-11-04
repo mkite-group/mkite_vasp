@@ -13,9 +13,10 @@ class VaspDosParser(VaspParser):
         return [self.get_energy_calc(), self.get_dos_calc()]
 
     def get_dos_calc(self):
-        dos = {
-            "@module": "mkite.orm.calcs.models",
-            "@class": "ProjectedDOS",
+        info = {
+            "@module": "mkite.orm.base.models",
+            "@class": "CalcNode",
+            "calctype": {"name": "pdos"}
         }
         dos["efermi"] = float(self.vasprun.efermi)
 
@@ -28,7 +29,10 @@ class VaspDosParser(VaspParser):
         dos["npoints"] = len(tdos.energies)
         dos["tdos"] = self.get_tdos()
         dos["pdos"] = self.get_pdos()
-        return dos
+
+        info["data"] = dos
+
+        return info
 
     def get_tdos(self):
         return self.vasprun.tdos.as_dict()["densities"]
