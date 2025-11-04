@@ -4,7 +4,7 @@ from datetime import timedelta
 from pymatgen.io.vasp.inputs import Kpoints
 from pymatgen.io.vasp.outputs import Vasprun, Outcar
 
-from mkite_core.models import NodeResults, JobInfo, RunStatsInfo, JobResults, CrystalInfo
+from mkite_core.models import NodeResults, JobInfo, RunStatsInfo, JobResults, CrystalInfo, CalcInfo
 from mkite_core.recipes.parser import BaseParser
 
 
@@ -69,13 +69,13 @@ class VaspParser(BaseParser):
         return [self.get_energy_calc()]
 
     def get_energy_calc(self):
-        # TODO: use calcs.io
-        return {
-            "@module": "mkite.orm.calcs.models",
-            "@class": "EnergyForces",
+        info = CalcInfo()
+        info.set_calctype("energy_forces")
+        info.data = {
             "energy": self.get_energy(),
             "forces": self.get_forces(),
         }
+        return info.as_dict()
 
     def get_nodes(self):
         return [
