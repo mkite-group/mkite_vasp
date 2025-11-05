@@ -13,7 +13,7 @@ class VaspOptions(BaseOptions):
     INCAR: dict = {}
     KPOINTS: dict = {}
     POTCAR: dict = {}
-    POTCAR_FUNCTIONAL: str = "PBE_54"
+    POTCAR_FUNCTIONAL: str = "PBE_64"
 
     @classmethod
     def get_defaults(cls):
