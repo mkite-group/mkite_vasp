@@ -11,7 +11,7 @@ from mkite_vasp.settings import VaspOptions
 from mkite_vasp.settings import VaspSettings
 from pymatgen.core import Molecule
 from pymatgen.core import Structure
-from pymatgen.io.vasp.sets import DictSet
+from pymatgen.io.vasp.sets import VaspInputSet
 
 from .errors import VaspErrorHandler
 
@@ -27,7 +27,7 @@ class VaspRecipe(BaseRecipe):
     ERROR_CLS = VaspErrorHandler
 
     def setup(self, workdir):
-        vasp_input = DictSet(
+        vasp_input = VaspInputSet(
             structure=self.get_inputs(),
             config_dict=self.get_options(),
         )
