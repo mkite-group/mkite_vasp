@@ -18,6 +18,7 @@ class VaspDosParser(VaspParser):
             "@class": "CalcNode",
             "calctype": {"name": "pdos"}
         }
+        dos = {}
         dos["efermi"] = float(self.vasprun.efermi)
 
         tdos = self.vasprun.tdos
